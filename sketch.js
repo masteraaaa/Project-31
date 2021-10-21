@@ -31,10 +31,16 @@ function setup() {
   }
 
   //create 3rd row of plinko objects
-  
+  for (var j = 25; j <=width-20; j=j+50)
+  {
+    plinkos.push(new Plinko(j,275))
+  }
   
   //create 4th row of plinko objects
-  
+  for (var j = 0; j <=width-30; j=j+50)
+  {
+    plinkos.push(new Plinko(j,375))
+  }
 
     
 }
@@ -59,9 +65,11 @@ function draw() {
   }
 
   //create the particles using frameCount
-
+if(framecount%60===0){
+  particles.push(new particles(random(0,800),0))
 
   //display the particles 
-
+for (var k =0; k < particles.length; k++) {
+  particles[k].display();
 
 }
